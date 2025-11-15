@@ -1,4 +1,8 @@
 ---
+import frutosSecos from '../../assets/frutos_secos.png';
+import barraEnergetica from '../../assets/barra_energetica.png';
+import chipsPlatano from '../../assets/chips_platano.png';
+import galletasAvena from '../../assets/galletas_avena.png';
 ---
 
 <section id="products" class="section">
@@ -8,7 +12,9 @@
 
       <!-- MIX DE FRUTOS SECOS -->
       <div class="product-item">
-        <img src="src/assets/frutos_secos.png" alt="Mix de frutos secos" />
+        <div class="product-image">
+          <img src={frutosSecos.src} alt="Mix de frutos secos" />
+        </div>
         <div class="product-description">
           <h3>Mix de Frutos Secos</h3>
           <p>
@@ -22,7 +28,9 @@
 
       <!-- BARRA ENERGÉTICA -->
       <div class="product-item reverse">
-        <img src="src/assets/barra_energetica.png" alt="Barra energética" />
+        <div class="product-image">
+          <img src={barraEnergetica.src} alt="Barra energética" />
+        </div>
         <div class="product-description">
           <h3>Barra Energética</h3>
           <p>
@@ -35,7 +43,9 @@
 
       <!-- CHIPS DE PLÁTANO -->
       <div class="product-item">
-        <img src="src/assets/chips_platano.png" alt="Chips de plátano" />
+        <div class="product-image">
+          <img src={chipsPlatano.src} alt="Chips de plátano" />
+        </div>
         <div class="product-description">
           <h3>Chips de Plátano</h3>
           <p>
@@ -48,7 +58,9 @@
 
       <!-- GALLETAS DE AVENA -->
       <div class="product-item reverse">
-        <img src="src/assets/galletas_avena.png" alt="Galletas de avena" />
+        <div class="product-image">
+          <img src={galletasAvena.src} alt="Galletas de avena" />
+        </div>
         <div class="product-description">
           <h3>Galletas de Avena</h3>
           <p>
