@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Offer from '../components/sections/Offer.astro';
+import TargetMarket from '../components/sections/TargetMarket.astro';
+import Products from '../components/sections/Products.astro';
+import Preorder from '../components/sections/Preorder.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<Navbar />
+	<div class="fullpage-container">
+		<Hero />
+		<About />
+		<Offer />
+		<TargetMarket />
+		<Products />
+		<Preorder />
+	</div>
+	<Footer />
 </Layout>

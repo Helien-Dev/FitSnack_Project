@@ -1,0 +1,43 @@
+---
+---
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="#hero" class="navbar-logo">FitSnack Co.</a>
+    <button class="navbar-toggle" aria-label="Toggle menu" id="navbar-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="navbar-menu" id="navbar-menu">
+      <li><a href="#hero" class="navbar-link">Inicio</a></li>
+      <li><a href="#about" class="navbar-link">Quienes Somos</a></li>
+      <li><a href="#offer" class="navbar-link">Ofrecemos</a></li>
+      <li><a href="#target" class="navbar-link">Mercado Objetivo</a></li>
+      <li><a href="#products" class="navbar-link">Productos</a></li>
+      <li><a href="#preorder" class="navbar-link">Preordenes</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('navbar-toggle');
+  const menu = document.getElementById('navbar-menu');
+  const links = document.querySelectorAll('.navbar-link');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+
+    // Cerrar el menú al hacer click en un enlace
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+        toggle.classList.remove('active');
+      });
+    });
+  }
+</script>
+
