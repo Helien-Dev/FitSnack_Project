@@ -8,5 +8,6 @@ export default defineConfig({
     preview: {
       allowedHosts: ['fitsnack.alvaroavila.dev']
     }
-  }
+  },
+  site: 'https://fitsnack.alvaroavila.dev/'
 });
