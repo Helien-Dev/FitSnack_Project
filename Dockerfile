@@ -6,11 +6,11 @@ FROM node:20-alpine AS builder
 # Establecer directorio de trabajo
 WORKDIR /app
 
-# Copiar archivos de dependencias
-COPY package.json package-lock.json ./
+# Copiar package.json primero
+COPY package.json ./
 
-# Instalar dependencias
-RUN npm ci
+# Instalar dependencias (npm install funciona con o sin package-lock.json)
+RUN npm install
 
 # Copiar el resto de los archivos del proyecto
 COPY . .
@@ -23,9 +23,11 @@ FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-# Copiar solo los archivos necesarios para producción
-COPY package.json package-lock.json ./
-RUN npm ci --only=production
+# Copiar package.json
+COPY package.json ./
+
+# Instalar solo dependencias de producción
+RUN npm install --only=production
 
 # Copiar los archivos construidos desde el stage de build
 COPY --from=builder /app/dist ./dist
