@@ -6,7 +6,7 @@ export default defineConfig({
   output: 'static',
   vite: {
     preview: {
-      allowedHosts: ['fitsnack.alvaroavila.dev']
+      allowedHosts: true
     }
   },
   site: 'https://fitsnack.alvaroavila.dev/'
