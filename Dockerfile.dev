@@ -1,0 +1,19 @@
+# Dockerfile para desarrollo - FitSnack Project
+
+FROM node:20-alpine
+
+# Establecer directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos de dependencias
+COPY package.json package-lock.json ./
+
+# Instalar todas las dependencias (incluyendo devDependencies)
+RUN npm ci
+
+# Exponer el puerto de desarrollo
+EXPOSE 4321
+
+# Comando para desarrollo con hot-reload
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "4321"]
+

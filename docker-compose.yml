@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  fitsnack-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fitsnack-app
+    ports:
+      - "4321:4321"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      # Opcional: para desarrollo, puedes montar el código fuente
+      # - ./src:/app/src
+      # - ./public:/app/public
+    networks:
+      - fitsnack-network
+
+networks:
+  fitsnack-network:
+    driver: bridge
+
